@@ -1,21 +1,18 @@
-// main.ts
-const appContainer = document.getElementById("app")!;
-
 function isMobilePath(pathname: string) {
   return pathname === "/pc" || pathname.startsWith("/pc/");
 }
 
-let currentUnmount: (() => void) | undefined;
+let currentUnmount = () => {};
 
 async function loadAndMount() {
   if (isMobilePath(location.pathname)) {
     const pc = await import("./src2/bootstrap"); // src2 下
-    currentUnmount?.();
-    currentUnmount = pc.mount(appContainer);
+    currentUnmount();
+    currentUnmount = pc.mount("#app");
   } else {
-    const mobile = await import("./src/bootstrap"); // src 下
-    currentUnmount?.();
-    currentUnmount = mobile.mount(appContainer);
+    const mobile = await import("./src/bootstrap"); // src 下, 输入错误默认进入 移动端
+    currentUnmount();
+    currentUnmount = mobile.mount("#app");
   }
 }
 

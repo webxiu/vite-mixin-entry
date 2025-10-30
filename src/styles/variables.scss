@@ -1,0 +1,62 @@
+/* 定义全局遍历变量 */
+
+// 间距与字体
+$spaces: 1, 4, 6, 8, 10, 12, 14, 15, 16, 18, 20, 22, 24, 26, 28, 30, 32, 36, 40, 46, 50, 60, 80, 100, 120;
+// 字体从粗细
+$weights: 100, 200, 300, 400, 500, 600, 700;
+// flex
+$flexs: 1, 2, 3, 4, 5, 6, 7, 8, 9;
+// 颜色
+$colors: (
+  "primary": #1989fa,
+  "success": #07c160,
+  "danger": #ee0a24,
+  "warning": #ff976a,
+  "fff": #fff,
+  "111": #111,
+  "222": #222,
+  "333": #333,
+  "555": #555,
+  "666": #666,
+  "777": #777,
+  "888": #888,
+  "999": #999,
+  "aaa": #aaa,
+  "bbb": #bbb,
+  "ccc": #ccc,
+  "ddd": #ddd,
+  "eee": #eee,
+  "f00": #f00
+);
+
+:root {
+  /* 渐变 */
+  --main-bg-color: linear-gradient(to right, #8b3d92, #c12f38);
+  /* 阴影 */
+
+  /* 配色 */
+  --danger-color: #f84610;
+  --green-color: #44b035;
+  --yellow-color: #f5c156;
+
+  /* 覆盖vant内部变量 */
+
+  // 红色主题
+  --main-color: #646566;
+  // Tab菜单激活颜色
+  --tab-active-color: #1989fa;
+  // Navbar标题粗细
+  --van-font-bold: 500;
+  // 搜索框搜索图标颜色
+  --van-search-left-icon-color: #323233;
+  --van-signature-content-border: 5px dotted #dadada;
+}
+
+$mainColor: #646566;
+$mainBgColor: #fff;
+
+$white: #fff;
+
+:export {
+  white: $white;
+}

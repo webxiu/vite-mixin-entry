@@ -1,0 +1,127 @@
+// 引入重置样式
+@import "./variables.scss";
+@import "./mixin.scss";
+@import "./reset.scss";
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+#app {
+  width: 750px;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 32px;
+  color: $mainColor;
+  background-color: $mainBgColor;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.28s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(60px);
+}
+// 边框
+.border-line {
+  border: 1px solid rgb(221, 222, 225);
+}
+// 边框
+.border-line-bottom {
+  border-bottom: 1px solid rgb(221, 222, 225);
+}
+// 标题加冒号
+.label-colon {
+  display: inline-block;
+  text-align-last: justify;
+  font-weight: 700;
+  position: relative;
+  padding-right: 15px;
+  font-size: 24px;
+  &::after {
+    content: ":";
+    bottom: 0px;
+    position: absolute;
+  }
+}
+
+// 单选框禁用样式改为只读样式
+.van-radio-group.readonly {
+  // 标题颜色
+  .van-radio__label--disabled {
+    color: var(--van-radio-label-color);
+  }
+  // 未选中时的选框样式
+  .van-radio__icon--disabled .van-icon {
+    background-color: inherit;
+    border-color: var(--van-radio-border-color);
+  }
+  // 选中时的选框样式
+  .van-radio__icon--disabled.van-radio__icon--checked .van-icon {
+    background-color: var(--van-radio-checked-icon-color);
+    border-color: var(--van-radio-checked-icon-color);
+  }
+  // 打勾颜色
+  .van-radio__icon--disabled.van-radio__icon--checked .van-icon::before {
+    color: var(--van-white);
+  }
+}

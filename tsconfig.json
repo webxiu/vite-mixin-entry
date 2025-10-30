@@ -1,33 +1,41 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    /* 基础设置 */
+    "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["esnext", "DOM", "DOM.Iterable"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "allowJs": true,
+    "jsx": "preserve", // 保留 JSX 以供 Vue 使用
 
-    /* Bundler mode */
+    /* 打包相关 */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
 
-    /* Linting */
+    /* 代码规范 */
     "noImplicitAny": false,
     "strict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
+
+    /* 路径别名 */
     "paths": {
       "@/*": ["./src/*"],
-      "@pc/*": ["./src2/*"],
+      "@src2/*": ["./src2/*"],
       "~/*": ["./*"]
-    }
+    },
+
+    /* 类型声明目录 */
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "typeRoots": ["./types", "./node_modules/@types/"],
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+
+  /* 编译包含范围 */
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src2/**/*.vue", "src2/**/*.ts", "src2/**/*.d.ts", "src2/**/*.tsx", "src2/**/*.vue"],
+  /* 引用其他 tsconfig */
   "references": [{ "path": "./tsconfig.node.json" }]
 }
