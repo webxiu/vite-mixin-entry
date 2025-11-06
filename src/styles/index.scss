@@ -1,7 +1,7 @@
 // 引入重置样式
-@import "./variables.scss";
-@import "./mixin.scss";
-@import "./reset.scss";
+@use "./variables.scss" as vars;
+@forward "./mixin.scss";
+@forward "./reset.scss";
 
 a {
   font-weight: 500;
@@ -38,8 +38,8 @@ html {
   height: 100%;
   overflow-x: hidden;
   font-size: 32px;
-  color: $mainColor;
-  background-color: $mainBgColor;
+  color: vars.$mainColor;
+  background-color: vars.$mainBgColor;
 }
 
 @media (prefers-color-scheme: light) {

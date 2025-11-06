@@ -36,22 +36,17 @@ export default (configEnv: ConfigEnv) => {
         output: {
           // 按应用拆包（可选优化）
           manualChunks(id) {
-            // console.log("id :>> ", id);
-
-            if (id.includes("/src/")) {
-              if (id.endsWith(".scss") || id.endsWith(".css")) return "mobile";
-              return "mobile";
-            }
-
-            if (id.includes("/src2/")) {
-              if (id.endsWith(".scss") || id.endsWith(".css")) return "pc";
-              return "pc";
-            }
-
             if (id.includes("node_modules")) {
-              if (id.includes("axios")) return "vendor-axios";
+              if (id.includes("element-plus")) return "element-plus";
+              if (id.includes("vant")) return "vant";
+              if (id.includes("vue") || id.includes("@vue/")) return "vue";
+              if (id.includes("axios")) return "axios";
               return "vendor";
             }
+ 
+            // 业务代码分块
+            if (id.includes('/src/')) return 'mobile';
+            if (id.includes('/src2/')) return 'pc';
           },
           chunkFileNames: "assets/js/[name]-[hash].js",
           entryFileNames: "assets/js/[name]-[hash].js",

@@ -1,3 +1,5 @@
+const rootDom = document.getElementById("app")!;
+
 function isMobilePath(pathname: string) {
   return pathname === "/pc" || pathname.startsWith("/pc/");
 }
@@ -5,14 +7,13 @@ function isMobilePath(pathname: string) {
 let currentUnmount = () => {};
 
 async function loadAndMount() {
+  currentUnmount();
   if (isMobilePath(location.pathname)) {
-    const pc = await import("./src2/bootstrap"); // src2 下
-    currentUnmount();
-    currentUnmount = pc.mount("#app");
+    const pc = await import("./src2/bootstrap");
+    currentUnmount = pc.mount(rootDom, "/pc");
   } else {
-    const mobile = await import("./src/bootstrap"); // src 下, 输入错误默认进入 移动端
-    currentUnmount();
-    currentUnmount = mobile.mount("#app");
+    const mobile = await import("./src/bootstrap");
+    currentUnmount = mobile.mount(rootDom, "/mobile");
   }
 }
 

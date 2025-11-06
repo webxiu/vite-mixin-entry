@@ -1,5 +1,7 @@
+@use "./variables.scss" as vars;
+
 /* **************************** 颜色 *****************************/
-@each $name, $color in $colors {
+@each $name, $color in vars.$colors {
   // ---- 字体色 ----
   .color-#{$name} {
     color: #{$color};
@@ -21,12 +23,12 @@
 
 /* **************************** 粗细 *****************************/
 
-@each $i in $weights {
+@each $i in vars.$weights {
   .fw-#{$i} {
     font-weight: #{$i};
   }
 }
-@each $i in $spaces {
+@each $i in vars.$spaces {
   /* **************************** 边框 *****************************/
 
   .br-#{$i} {
@@ -77,7 +79,7 @@
 
 /* **************************** flex  *****************************/
 
-@each $i in $flexs {
+@each $i in vars.$flexs {
   // flex 0.1-0.9
   .flexf-#{$i} {
     flex: #{"0." + $i};
