@@ -12,8 +12,7 @@ interface ImportMetaEnv {
 }
 
 export default (configEnv: ConfigEnv) => {
-  const [mode, mobile = "mobile"] = configEnv.mode.split(":");
-  const viteEnv = loadEnv(mode, process.cwd()) as ImportMetaEnv;
+  const viteEnv = loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv;
   const { VITE_PORT, VITE_BASE_URL, VITE_BASE_API, VITE_PUBLIC_PATH } = viteEnv;
 
   return defineConfig({

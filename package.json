@@ -1,13 +1,12 @@
 {
-  "name": "vite-app-pc",
+  "name": "vite-mixin-entry",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --mode development:mobile",
-    "build": "vite build --mode production:mobile",
-    "dev:pc": "vite --mode development:pc",
-    "build:pc": "vue-tsc -b && vite build --mode production:pc",
+    "dev": "vite --mode development",
+    "build": "vite build --mode production",
+    "build:test": "vue-tsc -b && vite build --mode production",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -17,12 +16,8 @@
   },
   "devDependencies": {
     "@types/node": "^24.6.0",
-    "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitejs/plugin-vue-jsx": "^5.1.1",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "@vue/eslint-config-typescript": "^14.6.0",
-    "@vue/tsconfig": "^0.8.1",
     "postcss-px2vp": "^1.1.4",
     "sass": "^1.93.2",
     "typescript": "~5.9.3",

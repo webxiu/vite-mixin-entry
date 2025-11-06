@@ -1,7 +1,7 @@
 # Vite + Vue 3 + Vant + Element Plus 项目说明(一次打包)
 
-本项目是一个基于 Vue3 + Vite 的多端应用解决方案，集成了 Vant（移动端UI）和 Element Plus（PC端UI），
-支持在同一代码库中开发和管理移动端和PC端两个独立的应用。
+本项目是一个基于 Vue3 + Vite 的多端应用解决方案，集成了 Vant（移动端UI）和 Element Plus（PC端UI）。
+支持在同一代码库中开发和管理移动端和PC端两个独立的应用，一次打包，混合部署。
 
 ## 1. 项目概述
 - **技术栈**：Vite (构建工具) + Vue 3 (前端框架) + Vant (移动端 UI 库) + Element Plus (PC 端 UI 库)
@@ -10,7 +10,7 @@
   - Vite 提供极速热更新和构建。
   - Vant 适配移动端，Element Plus 适配 PC 端。
   - 按需引入 UI 组件，减少打包体积。
-  - 多项目混合, 根据路径区分, 一次打包部署
+  - 多项目一次启动, 共享配置环境, 一次打包部署, 根据路径(mobie/pc)区分项目入口。
 
 
 ## 2. 开发
